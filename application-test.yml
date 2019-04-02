@@ -1,0 +1,77 @@
+server:
+ # port: 8082
+  servlet:
+    context-path:
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #url: jdbc:mysql://192.168.1.251:3306/dividb_cms_dev?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+    url: jdbc:mysql://192.168.1.249:3306/dividb_07?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+    #url: jdbc:mysql://localhost:3306/dividb_v0.2.1?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+    username: root
+    password: 123456
+
+
+  redis:
+    host: 192.168.1.249
+    port: 6379
+    timeout: 200
+    database: 0
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+      max-wait: 100
+
+    #项目日志路径
+logging:
+#  path: d://logs/
+#  levels: info
+  config: classpath:conf/logback-prd.xml
+
+wx:
+  mchId: 1239732102 #商户ID
+  mchSecret: divi2013divi0610divi2013divi0610 #商户API密钥
+  appId: wxc5f72428da7717c5 #小程序ID
+  appSecret: a4a5bb8f5328bedc0ce2f48e90041841 #小程序密钥
+  notifyUrl: https://testapi.divi.cn/api/wx/notifyPayResult #支付通知地址
+ #notifyUrl: http://rh9gur.natappfree.cc/api/wx/notifyPayResult #支付通知地址
+  uniordUrl: https://api.mch.weixin.qq.com/pay/unifiedorder #发起预支付交易单请求地址
+  tokenUrl: https://api.weixin.qq.com/cgi-bin/token #获取微信接口调用凭证（基础支持类型）
+  certPath: /home/file/cert/
+  #certPath: F:/file/cert/
+
+image:
+  #售后
+  afterSale:
+    uploadPath: /home/file/images/after_sale/
+  #小程序
+  mini:
+    path: /home/file/images/mini-ui/
+
+#oss上传文件配置
+oss:
+  aliCloud:
+    aliyunEndPoint: oss-cn-shenzhen.aliyuncs.com
+    aliyunAccessKeyId: LTAImSuACfRaDxfC
+    aliyunAccessKeySecret: oKNt5b5RWFbK1XlW24N4sNfBXxEHfG
+    bucketName: bucket-divi-sz
+
+#旺店通配置
+wdt:
+  sid: apidevnew2
+  shopNo: diyiwei2test
+  appkey: diyiwei2test
+  appsecret: 12345
+  baseUrl: http://121.41.177.115/openapi2
+
+update-order:
+  enable: true
+  address: success_pay
+
+tx-app-analysis:
+  appId: 500663931
+  secretKey: f0a62c5c46aeda4b7c4a1db40578be75
+  eventId: 500663935
+
