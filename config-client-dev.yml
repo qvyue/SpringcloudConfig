@@ -1,1 +1,77 @@
-foo: foo version 3  dev yml
+server:
+  port: 8080
+  servlet:
+    context-path:
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+   #url: jdbc:mysql://192.168.1.13:3306/dividb_cms_dev?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+    url: jdbc:mysql://192.168.1.251:3306/dividb_0701?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+    username: root
+    password: 123456
+
+
+  redis:
+    host: 192.168.1.251
+    port: 6379
+    timeout: 200
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 100
+
+    #项目日志路径
+logging:
+#  path: d://logs/
+#  levels: info
+  config: classpath:conf/logback-dev.xml
+
+wx:
+  mchId: 1239732102 #商户ID
+  mchSecret: divi2013divi0610divi2013divi0610 #商户API密钥
+  appId: wxc5f72428da7717c5 #小程序ID
+  appSecret: a4a5bb8f5328bedc0ce2f48e90041841 #小程序密钥
+  notifyUrl: https://devapi.divi.cn/api/wx/notifyPayResult #支付通知地址
+  uniordUrl: https://api.mch.weixin.qq.com/pay/unifiedorder #发起预支付交易单请求地址
+  tokenUrl: https://api.weixin.qq.com/cgi-bin/token #获取微信接口调用凭证（基础支持类型）
+#  certPath: F:/file/cert/
+  certPath: /home/file/cert/
+
+#image:
+#  #售后
+#  afterSale:
+#    uploadPath: E:/file/images/after_sale/
+#  #小程序
+#  mini:
+#    path: E:/file/images/mini-ui/
+image:
+  #售后
+  afterSale:
+    uploadPath: /home/file/images/after_sale/
+  #小程序
+  mini:
+    path: /home/file/images/mini-ui/
+
+#oss上传文件配置
+oss:
+  aliCloud:
+    aliyunEndPoint: oss-cn-shenzhen.aliyuncs.com
+    aliyunAccessKeyId: LTAImSuACfRaDxfC
+    aliyunAccessKeySecret: oKNt5b5RWFbK1XlW24N4sNfBXxEHfG
+    bucketName: bucket-divi-sz
+
+
+#旺店通配置
+wdt:
+  sid: apidevnew2
+  shopNo: diyiwei2test
+  appkey: diyiwei2test
+  appsecret: 12345
+  baseUrl: http://121.41.177.115/openapi2
+
+update-order:
+  enable: true
+  address: success_pay
