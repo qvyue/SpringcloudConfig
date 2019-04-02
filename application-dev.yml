@@ -23,11 +23,6 @@ spring:
         min-idle: 0
         max-wait: 100
 
-    #项目日志路径
-logging:
-#  path: d://logs/
-#  levels: info
-  config: classpath:conf/logback-dev.xml
 
 wx:
   mchId: 1239732102 #商户ID
